@@ -152,9 +152,12 @@ try {
 		button.style.top = toggleChalkboardButton.top ||  "auto";
 		button.style.right = toggleChalkboardButton.right ||  "auto";
 
-        button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fa ' + 
-            String( (toggleChalkboardButton.icon || 'fa-pen-square') ) + '"></i></a>';
-		document.querySelector(".reveal").appendChild( button );
+        button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fa fa-pen-square"></i></a>';
+        if (toggleChalkboardButton.icon) {
+            button.innerHTML = button.innerHTML.replace('fa-pen-square', toggleChalkboardButton.icon);
+        }
+        
+        document.querySelector(".reveal").appendChild( button );
 	}
 	if ( toggleNotesButton ) {
 //console.log("toggleNotesButton")
@@ -170,9 +173,12 @@ try {
 		button.style.top = toggleNotesButton.top ||  "auto";
 		button.style.right = toggleNotesButton.right ||  "auto";
 
-        button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleNotesCanvas(); return false;"><i class="fa ' + 
-            String( (toggleNotesButton.icon || 'fa-pen') ) + '"></i></a>';
-		document.querySelector(".reveal").appendChild( button );
+        button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleNotesCanvas(); return false;"><i class="fa fa-pen"></i></a>';
+        if (toggleNotesButton.icon) {
+            button.innerHTML = button.innerHTML.replace('fa-pen-square', toggleNotesButton.icon);
+        }
+        
+        document.querySelector(".reveal").appendChild( button );
 	}
 //alert("Buttons");
 
