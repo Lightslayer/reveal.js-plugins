@@ -153,7 +153,7 @@ try {
 		button.style.right = toggleChalkboardButton.right ||  "auto";
 
         button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fa ' + 
-            (toggleChalkboardButton.icon || 'fa-pen-square') + '"></i></a>'
+            (toggleChalkboardButton.icon || 'fa-pen-square') + '"></i></a>';
 		document.querySelector(".reveal").appendChild( button );
 	}
 	if ( toggleNotesButton ) {
@@ -171,7 +171,7 @@ try {
 		button.style.right = toggleNotesButton.right ||  "auto";
 
         button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleNotesCanvas(); return false;"><i class="fa ' + 
-            (toggleNotesButton.icon || 'fa-pen') + '"></i></a>'
+            (toggleNotesButton.icon || 'fa-pen') + '"></i></a>';
 		document.querySelector(".reveal").appendChild( button );
 	}
 //alert("Buttons");
