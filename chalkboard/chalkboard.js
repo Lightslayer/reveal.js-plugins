@@ -142,17 +142,18 @@ try {
 		var button = document.createElement( 'div' );
 		button.className = "chalkboard-button";
 		button.id = "toggle-chalkboard";
-		button.style.visibility = "visible";
-		button.style.position = "absolute";
-		button.style.zIndex = 30;
-		button.style.fontSize = "24px";
+		button.style.visibility = toggleChalkboardButton.visible || "visible";
+		button.style.position = toggleChalkboardButton.position || "absolute";
+		button.style.zIndex = toggleChalkboardButton.zIndex || 30;
+		button.style.fontSize = toggleChalkboardButton.fontSize || "24px";
 
 		button.style.left = toggleChalkboardButton.left || "30px";
 		button.style.bottom = toggleChalkboardButton.bottom ||  "30px";
 		button.style.top = toggleChalkboardButton.top ||  "auto";
 		button.style.right = toggleChalkboardButton.right ||  "auto";
 
-		button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fa fa-pen-square"></i></a>'
+        button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fa ' + 
+            (toggleChalkboardButton.icon || 'fa-pen-square') + "></i></a>'
 		document.querySelector(".reveal").appendChild( button );
 	}
 	if ( toggleNotesButton ) {
@@ -160,16 +161,17 @@ try {
 		var button = document.createElement( 'div' );
 		button.className = "chalkboard-button";
 		button.id = "toggle-notes";
-		button.style.position = "absolute";
-		button.style.zIndex = 30;
-		button.style.fontSize = "24px";
+		button.style.position = toggleNotesButton.position || "absolute";
+		button.style.zIndex = toggleNotesButton.zIndex || 30;
+		button.style.fontSize = toggleNotesButton.fontSize || "24px";
 
 		button.style.left = toggleNotesButton.left || "70px";
 		button.style.bottom = toggleNotesButton.bottom ||  "30px";
 		button.style.top = toggleNotesButton.top ||  "auto";
 		button.style.right = toggleNotesButton.right ||  "auto";
 
-		button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleNotesCanvas(); return false;"><i class="fa fa-pen"></i></a>'
+        button.innerHTML = '<a href="#" onclick="RevealChalkboard.toggleNotesCanvas(); return false;"><i class="fa ' + 
+            (toggleNotesButton.icon || 'fa-pen') + '"></i></a>'
 		document.querySelector(".reveal").appendChild( button );
 	}
 //alert("Buttons");
