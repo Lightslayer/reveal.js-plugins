@@ -1516,7 +1516,8 @@ console.log( 'Create printout for slide ' + storage[1].data[i].slide.h + "." + s
 	this.reset = resetSlide;
 	this.resetAll = resetStorage;
 	this.download = downloadData;
-	this.configure = configure;
+    this.configure = configure;
+    this.setColor = setColor;
 
 	return this;
 })();
