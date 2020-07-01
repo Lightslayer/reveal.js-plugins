@@ -42,7 +42,7 @@ var Recorder = {
     initialize : function initialize() {
 	this.audio = new Audio();
 	this.audio.autoplay = true;
-	this.zip = new JSZip();
+	this.zip = null;
 
 	// Create canvas on which red circle can be drawn
 	this.canvas = document.createElement( 'canvas' );
@@ -51,6 +51,13 @@ var Recorder = {
 	this.canvas.width = 25;
 	this.canvas.height = 25;
 	document.querySelector( '.reveal' ).appendChild( this.canvas );
+	    
+	try {
+  		this.zip = new JSZip();
+	}
+	catch(err) {
+  		console.error(err);
+	} 
 
     }, 
 
